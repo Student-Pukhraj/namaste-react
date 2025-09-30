@@ -1,0 +1,28 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "this is namaste react course",
+  "keywords": [
+    "react",
+    "namaste",
+    "react"
+  ],
+  "homepage": "https://github.com/Student-Pukhraj/namaste-react#readme",
+  "bugs": {
+    "url": "https://github.com/Student-Pukhraj/namaste-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Student-Pukhraj/namaste-react.git"
+  },
+  "license": "ISC",
+  "author": "Pukhraj Jharotiya",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}
