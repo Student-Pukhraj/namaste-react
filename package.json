@@ -18,11 +18,18 @@
   "license": "ISC",
   "author": "Pukhraj Jharotiya",
   "type": "commonjs",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
     "test": "jest"
   },
   "devDependencies": {
     "parcel": "^2.16.0"
-  }
-}
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserList": [
+    "last 2 version"
+  ]
+} 
