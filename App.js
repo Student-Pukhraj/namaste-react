@@ -3,67 +3,95 @@ import ReactDOM from "react-dom/client";
 
 // React.createElement => ReactElement-JS Object => HTMLElement(render)
 
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Namaste React 🚀"
-);
-console.log(heading);
+/**
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *   - RestaurantCard
+ *    - img
+ *    - Name of res, star rating, cuisine, delivery time
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
 
-// JSX - is not HTML in JS
-// HTML like or XML like syntax
-// JSX - (transpiled before it reaches the JS Engine)
-// PARCEL
-// babel
-// JSX =>Babel transpiles it to React.createElement => ReactElement-JS Object => HTMLElement(render)
-
-// React Element
-
-const elem  = <span>React Element</span>
-const title = (
-  <h1 className="head" tabIndex="1">
-    Namaste React using JSX 🚀
-  </h1>
-);
-
-const Title = () => (
-  <h1 className="head" tabIndex="1">
-  {elem}
-    Namaste React using JSX 🚀
-  </h1>
-);
-
-const fn1 = () => true;
-
-const fn2 = () => {
-  return true;
-}
-
-// React Component
-// - Class based Component - OLD
-// - Functional Component - NEW
-
-// React Functional Component
-const HeadingComponent = () => {
-  return <h1 className="heading">Namaste React Functional Component</h1>
-}
-
-const number = 10000; 
-
-// Component Composition
-const HeadingComponent2 = () => (
-    <div id="container">
-    {Title()}
-    <Title />
-    <Title></Title>
-    {title}
-    <h2>{number}</h2>
-   <h1 className="heading">Namaste React Functional Component</h1>
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=fast-food&sf=&txt_keyword=All"
+          alt=""
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
-)
+  );
+};
 
+const RestaurantCard = () => {
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+      <img
+        className="res-logo"
+        src="https://b.zmtcdn.com/data/pictures/8/101818/76d3e3ed28ba764610a6e611e1f0cd47_o2_featured_v2.jpg?output-format=webp"
+        alt="res-logo"
+      />
+      <h3>Gareeb Nawaaz Hotel</h3>
+      <h4>Mughlai, North Indian</h4>
+      <h4>4.2 stars</h4>
+      <h4>19 minutes</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent2 />);
- 
+root.render(<AppLayout />);
