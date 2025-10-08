@@ -1,6 +1,7 @@
 # Namaste React 🎉
 
-# Parcel 
+# Parcel
+
 - Dev build
 - Local Server
 - HMR = Hot Module Replacement
@@ -18,3 +19,25 @@
 - HTTPs
 - Tree Shaking - remove unused code
 - Different builds dev and production bundles
+
+# Food
+
+// React.createElement => ReactElement-JS Object => HTMLElement(render)
+
+/\*\*
+
+- Header
+- - Logo
+- - Nav Items
+- Body
+- - Search
+- - RestaurantContainer
+- - RestaurantCard
+- - img
+- - Name of res, star rating, cuisine, delivery time
+- Footer
+- - Copyright
+- - Links
+- - Address
+- - Contact
+    \*/
