@@ -1,20 +1,28 @@
-import { CDN_URL } from "../utils/constants";
+import { CDN_URL, No_IMAGE_FALLBACK } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
-  const { name, cuisines, cloudinaryImageId, avgRating, sla, costForTwo } =
-    resData;
+  console.log("resData", resData?.card?.card?.info ?? {});
+  const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
+    resData?.card?.card?.info ?? {};
+
+  if (!resData) {
+    return <h2>No data found</h2>;
+  }
+
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
         className="res-logo"
-        src={CDN_URL + cloudinaryImageId}
-        alt="res-logo"
+        src={
+          cloudinaryImageId ? CDN_URL + cloudinaryImageId : No_IMAGE_FALLBACK
+        }
+        alt="res-image"
       />
-      <h3>{name}</h3>
-      <h4>{cuisines}</h4>
-      <h4>{avgRating || "0.0"} stars</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{sla.deliveryTime} minutes</h4>
+      <h3>{name ?? "Sarvika Foods"}</h3>
+      <h4>{cuisines?.join(" ") ?? "Thalis North Indian Biryani"}</h4>
+      <h4>{avgRating ?? "4.3"} stars</h4>
+      <h4>{costForTwo ?? "200"} for two</h4>
+      <h4>{sla?.deliveryTime ?? "10"} minutes</h4>
     </div>
   );
 };
