@@ -20,7 +20,7 @@ const Body = () => {
     const json = await data.json();
     const newData = json?.data?.cards;
     setListOfRestaurants(newData);
-    setFilteredRestaurant(newData)
+    setFilteredRestaurant(newData);
   };
 
   return listOfRestaurants.length === 0 ? (
