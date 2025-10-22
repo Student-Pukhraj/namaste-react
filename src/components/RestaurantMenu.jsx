@@ -1,18 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Shimmmer from "./Shimmer";
 
 const RestaurantMenu = () => {
+  const [resMenu, setResMenu] = useState(null);
+
   const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.8191641&lng=75.7659513&restaurantId=689531&catalog_qa=undefined&query=Biryani&submitAction=ENTER"
-    );
-    console.log(data);
-    const newData = await data.json();
-    console.log(newData);
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.8191641&lng=75.7659513&restaurantId=443540"
+      );
+      console.log(response);
+      const newData = await response?.json();
+      console.log(newData?.data);
+    } catch (error) {
+      console.log("menu api not fetched", error);
+    }
   };
 
   useEffect(() => {
     fetchMenu();
   }, []);
+
+  if (resMenu === null) return <Shimmmer />;
 
   return (
     <div className="menu">
