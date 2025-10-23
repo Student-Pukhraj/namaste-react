@@ -7,7 +7,7 @@ const RestaurantMenu = () => {
   const fetchMenu = async () => {
     try {
       const response = await fetch(
-        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.8191641&lng=75.7659513&restaurantId=443540"
+        "api/proxy/swiggy/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.8191641&lng=75.7659513&restaurantId=443540"
       );
       console.log(response);
       const newData = await response?.json();
